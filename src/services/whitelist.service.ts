@@ -1,8 +1,7 @@
-import { PrismaClient } from "@prisma/client";
 import { normalizeEmail } from "../utils/validators";
 import { normalizeIp } from "../utils/ipHelper";
 import { ServiceResult, WhitelistDTO } from "../types";
-import { prisma } from "../config/databse";
+import prisma from "../config/databse";
 
 /**
  * Service class for whitelist operations
