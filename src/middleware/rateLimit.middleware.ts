@@ -1,4 +1,4 @@
-import rateLimit from 'express-rate-limit';
+import rateLimit from "express-rate-limit";
 
 /**
  * Rate limiter configuration
@@ -9,7 +9,7 @@ export const apiLimiter = rateLimit({
   max: Number(process.env.RATE_LIMIT_MAX_REQUESTS) || 5, // 5 requests per window
   message: {
     success: false,
-    message: 'Too many requests from this IP, please try again later',
+    message: "Too many requests from this IP, please try again later",
   },
   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
@@ -28,7 +28,8 @@ export const whitelistLimiter = rateLimit({
   max: 3, // 3 requests per 15 minutes
   message: {
     success: false,
-    message: 'You have exceeded the whitelist submission limit. Please try again later',
+    message:
+      "You have exceeded the whitelist submission limit. Please try again later",
   },
   standardHeaders: true,
   legacyHeaders: false,
