@@ -4,7 +4,7 @@ import rateLimit from "express-rate-limit";
  * Rate limiter configuration
  * Limits requests to 5 per 15 minutes per IP
  */
-export const apiLimiter = rateLimit({
+export const apiLimiter: any = rateLimit({
   windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
   max: Number(process.env.RATE_LIMIT_MAX_REQUESTS) || 5, // 5 requests per window
   message: {
@@ -23,7 +23,7 @@ export const apiLimiter = rateLimit({
  * Strict rate limiter for whitelist endpoint
  * More restrictive to prevent abuse
  */
-export const whitelistLimiter = rateLimit({
+export const whitelistLimiter: any = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 3, // 3 requests per 15 minutes
   message: {
